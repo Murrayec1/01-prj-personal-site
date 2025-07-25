@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This makes the site look good on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO meta description for better search engine optimization -->
+  <meta name="description" content="Emerald Carolynn - Web Alchemist and Creative Coder. Personal website showcasing beginner web development projects with HTML, CSS, and JavaScript. Gothic-themed portfolio with magical coding journey.">
+  <!-- Keywords for better SEO -->
+  <meta name="keywords" content="web development, HTML, CSS, JavaScript, portfolio, beginner developer, gothic design, web alchemist">
+  <!-- Author information -->
+  <meta name="author" content="Emerald Carolynn">
+  <title>Emerald Carolynn - Personal Website</title>
+  <!-- Bootstrap CSS for professional styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons for enhanced visual elements -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+  
+  <!-- Favicon for better branding -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪄</text></svg>">
+</head>
+<body>
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <!-- Modern container wrapper for sleek border effect -->
+  <div class="main-container">
+    
+    <!-- Navigation Bar -->
+    <!-- This is a simple navigation bar for beginners -->
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Website Header (Hero Section) -->
+    <header id="home" role="banner">
+      <!-- Epic Game of Thrones style title announcement -->
+      <h1>Emerald Carolynn</h1>
+      
+      <!-- Grand titles in GOT style -->
+      <div class="royal-titles">
+        <p class="title-line">The First of Her Name</p>
+        <p class="title-line">Weaver of Digital Realms</p>
+        <p class="title-line">Maester of the Sacred Arts of HTML & CSS</p>
+        <p class="title-line">Master of Storytelling</p>
+        <p class="title-line">Protector of Responsive Design</p>
+        <p class="title-line">Breaker of Bugs</p>
+        <p class="title-line">Mother of Creative Content</p>
+      </div>
+      
+      <!-- Epic proclamation -->
+      <p class="royal-proclamation">
+        "From the Northern Kingdoms of Code to the Southern Reaches of Design,<br>
+        I forge digital experiences with fire and blood... and JavaScript!"
+      </p>
+      
+      <!-- House motto style tagline -->
+      <p class="house-motto">
+        ⚔️ Code is Coming ⚔️
+      </p>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" role="main">
+      <h2>About Me</h2>
+      <img src="profile.jpg" alt="Emerald Carolynn - Web Alchemist and Creative Coder profile photo" width="200" height="200" loading="lazy">
+      <!-- Professional yet magical bio showcasing diverse experience -->
+      <p>
+        Greetings! I'm Emerald Carolynn, a multifaceted professional transitioning into the enchanting world of web development. With a rich background spanning healthcare, human resources, and customer service, I bring a unique blend of technical precision and people-centered expertise to every digital project I craft.
+      </p>
+      
+      <p>
+        My journey began in healthcare as a Pharmacy Technician and Medication Administrator, where I honed my attention to detail, problem-solving skills, and ability to work under pressure—qualities that translate beautifully to debugging code and creating seamless user experiences. Through my roles in human resources and leadership positions, I've developed strong communication skills, team collaboration abilities, and a deep understanding of user needs and organizational dynamics.
+      </p>
+      
+      <p>
+        As a public speaker and customer service professional, I've learned the art of translating complex concepts into accessible language—a skill I now apply to creating intuitive, user-friendly websites. My diverse professional background has taught me that great web development isn't just about writing clean code; it's about understanding people, solving real problems, and creating digital experiences that truly serve their intended audience.
+      </p>
+      
+      <p>
+        Now, as I weave my professional expertise with my passion for web development, I'm excited to create digital solutions that are not only technically sound but also deeply human-centered. Whether you're looking for someone who can bridge the gap between technical teams and stakeholders, or you need a developer who understands the importance of user experience from a service perspective, I'm ready to bring magic to your next project!
+      </p>
+
+      <!-- Master Resume Toggle Button -->
+      <div class="resume-toggle-container">
+        <button id="resumeToggle" class="resume-toggle-btn" onclick="toggleResume()">
+          📋 View Master Resume ✨
+        </button>
+        <button class="resume-download-btn" onclick="downloadResume()">
+          <i class="bi bi-download"></i> Download PDF Resume
+        </button>
+      </div>
+
+      <!-- Hidden Master Resume Section -->
+      <div id="masterResume" class="master-resume hidden">
+        <div class="resume-content">
+          
+          <!-- Professional Summary -->
+          <div class="resume-section">
+            <h3>🌟 Professional Summary</h3>
+            <p>
+              Caring, driven professional with over 10 years of diverse experience across healthcare, social services, customer support, education, and administrative coordination. Known for reliability, integrity, and a passion for helping others thrive—whether in care-based environments or organizational leadership. Strong foundation in communication, team supervision, human development, and client advocacy. Currently pursuing a B.S. in Professional Studies with minors in Psychology and History, and actively expanding expertise in AI and business innovation.
+            </p>
+          </div>
+
+          <!-- Work Experience -->
+          <div class="resume-section">
+            <h3>💼 Work Experience</h3>
+            
+            <div class="job-entry">
+              <h4>Qualified Intellectual Disabilities Professional</h4>
+              <p class="job-details"><strong>RHA Health Services</strong> – Gastonia, NC | Oct 2024 – Present</p>
+              <ul>
+                <li>Develop and implement Individualized Service Plans (ISPs) for adults with intellectual and developmental disabilities</li>
+                <li>Conduct regular assessments to track progress, modify supports, and ensure rights are respected</li>
+                <li>Collaborate with interdisciplinary teams to deliver client-centered, ethical, and effective care</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <h4>Pharmacy Technician / Beauty & Wellness Consultant</h4>
+              <p class="job-details"><strong>Walgreens</strong> – Lincolnton, NC | Sep 2022 – Oct 2024</p>
+              <ul>
+                <li>Supported pharmacists in dispensing medications, processing insurance claims, and advising customers</li>
+                <li>Administered vaccines and provided skincare/supplement guidance for wellness consultations</li>
+                <li>Promoted sales and engaged customers in fundraising initiatives, loyalty programs, and brand awareness</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <h4>Certified Medication Aide (CMA), Lead 3rd Shift Supervisor</h4>
+              <p class="job-details"><strong>Heath House</strong> – Lincolnton, NC | Jan 2022 – Aug 2023</p>
+              <ul>
+                <li>Administered medications, insulin, and documented medical data including vitals, progress notes, and incident reports</li>
+                <li>Supervised overnight staff, conducted med cart audits, and supported elderly residents with daily living care</li>
+                <li>Familiarity with CPAP, specimen collection, wound care, and phlebotomy protocols</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <h4>Habilitation Technician</h4>
+              <p class="job-details"><strong>Goodwill Workforce Development</strong> – Conover, NC | Apr 2018 – Jan 2022</p>
+              <ul>
+                <li>Supported adults with physical/developmental disabilities in building independence, social skills, and healthy habits</li>
+                <li>Coordinated outings, budgeted for events, managed client funds, and documented daily progress</li>
+                <li>Partnered with county services and employers to advocate for client employment and community integration</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <h4>Key Holder / Sales Lead</h4>
+              <p class="job-details"><strong>The GameFather</strong> – Hickory, NC | Jan 2017 – Mar 2018</p>
+              <ul>
+                <li>Opened and closed store operations, managed trade-in evaluations, and ensured product quality</li>
+                <li>Delivered customer service, enforced cleanliness standards, and handled cash and inventory</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <h4>Sales Ambassador</h4>
+              <p class="job-details"><strong>Abernethy Chrysler Dodge Jeep Ram</strong> – Lincolnton, NC | Apr 2015 – May 2016</p>
+              <ul>
+                <li>Demonstrated and sold vehicles, assisted in finance paperwork preparation, and managed customer relations</li>
+                <li>Facilitated test drives and explained key vehicle features</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <h4>Bartender / Lead Server</h4>
+              <p class="job-details"><strong>Vera Cruz</strong> – Martinez, GA | Jan 2011 – Feb 2014</p>
+              <ul>
+                <li>Delivered quality service in a fast-paced environment, managed bar inventory, and maintained safety protocols</li>
+                <li>Built rapport with regular customers and handled open tabs efficiently</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <h4>Human Resources Assistant (Internship)</h4>
+              <p class="job-details"><strong>Zoo Atlanta</strong> – Atlanta, GA | Feb 2009 – Oct 2010</p>
+              <ul>
+                <li>Filed confidential HR documents, scheduled events, coordinated mail/payroll delivery, and directed calls</li>
+                <li>Assisted HR manager with administrative tasks and visitor relations across the park</li>
+              </ul>
+            </div>
+
+            <div class="job-entry highlight">
+              <h4>🎯 Global Career Accelerator Participant</h4>
+              <p class="job-details"><strong>Remote | Global</strong> | 2025</p>
+              <ul>
+                <li>Selected for a prestigious, cohort-based accelerator focused on upskilling in professional communication, global leadership, AI strategy, and remote workforce trends</li>
+                <li>Collaborated with mentors and peers on real-world projects and job readiness for roles in HR, business, and tech innovation</li>
+                <li>Enhanced career branding, resume strategy, interview techniques, and leadership competencies for remote/hybrid employment</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="resume-section">
+            <h3>🎓 Education</h3>
+            
+            <div class="education-entry">
+              <h4>B.S. in Professional Studies (Minors: History & Psychology)</h4>
+              <p class="education-details"><strong>Appalachian State University</strong> – Boone, NC | Aug 2023 – Present</p>
+              <p><em>Working toward an MBA with a concentration in AI Intelligence</em></p>
+            </div>
+
+            <div class="education-entry">
+              <h4>Associate of Arts, GPA: 3.42</h4>
+              <p class="education-details"><strong>Fayetteville Technical Community College</strong> – Fayetteville, NC | Sep 2020 – Jul 2023</p>
+            </div>
+
+            <div class="education-entry">
+              <h4>Business Technology Diploma – Public Administration</h4>
+              <p class="education-details"><strong>Atlanta Job Corps</strong> – Atlanta, GA | Jan 2009 – Aug 2010</p>
+            </div>
+
+            <div class="education-entry">
+              <h4>Continuing Education: Teaching Adult Learners</h4>
+              <p class="education-details"><strong>Fayetteville Technical Community College</strong> – 2023</p>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="resume-section">
+            <h3>🏆 Certifications & Licenses</h3>
+            <div class="certifications-grid">
+              <div class="cert-item">Certified Medication Aide (CMA) – April 2022–Present</div>
+              <div class="cert-item">Certified Phlebotomy Technician I – March 2022–Present</div>
+              <div class="cert-item">PCA Certification – December 2021–Present</div>
+              <div class="cert-item">CPR/AED/First Aid (Valid through April 2026)</div>
+              <div class="cert-item">BLS Certification</div>
+            </div>
+          </div>
+
+          <!-- Professional Skills -->
+          <div class="resume-section">
+            <h3>⚡ Professional Skills</h3>
+            <div class="skills-categories">
+              
+              <div class="skill-category">
+                <h4>Healthcare & Social Services</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Social Work</span>
+                  <span class="skill-tag">Case Management</span>
+                  <span class="skill-tag">Behavioral Monitoring</span>
+                  <span class="skill-tag">Medical Documentation</span>
+                  <span class="skill-tag">C-PAP & Insulin Admin</span>
+                  <span class="skill-tag">Phlebotomy</span>
+                  <span class="skill-tag">Elder Care</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <h4>Business & Administration</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">HR & Administrative Support</span>
+                  <span class="skill-tag">Event Planning</span>
+                  <span class="skill-tag">Microsoft Office Suite</span>
+                  <span class="skill-tag">Data Entry (52 WPM)</span>
+                  <span class="skill-tag">Insurance & Prescription Billing</span>
+                  <span class="skill-tag">Financial Tracking</span>
+                  <span class="skill-tag">10-Key Calculator</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <h4>Leadership & Communication</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Leadership & Team Supervision</span>
+                  <span class="skill-tag">Public Speaking</span>
+                  <span class="skill-tag">Customer Service</span>
+                  <span class="skill-tag">Wellness Consulting</span>
+                  <span class="skill-tag">Scheduling</span>
+                  <span class="skill-tag">Filing</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Awards -->
+          <div class="resume-section">
+            <h3>🏅 Awards & Recognition</h3>
+            
+            <div class="award-entry highlight">
+              <h4>Educational Grant Recipient – Jewish Federation of Greensboro</h4>
+              <p>Selected for a prestigious educational grant to participate in a comprehensive Holocaust and Jewish history study program in Europe. This immersive experience provided deep cultural understanding and historical perspective through visits to significant memorial sites, museums, and educational institutions across multiple European countries.</p>
+            </div>
+            
+            <div class="award-entry">
+              <h4>Certificate of Appreciation – Goodwill Industries of NWNC (2019)</h4>
+              <p>Recognized for embodying Goodwill's values and embracing organizational change with excellence</p>
+            </div>
+          </div>
+
+          <!-- Affiliations -->
+          <div class="resume-section">
+            <h3>🤝 Professional Affiliations</h3>
+            <div class="affiliation-entry">
+              <h4>Alpha Tau Phi Chapter of Phi Theta Kappa Honor Society</h4>
+              <p>Fayetteville Technical Community College | Member since 2022</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects">
+      <h2>Featured Spells (Projects)</h2>
+      <!-- Bootstrap container for responsive grid layout with proper spacing -->
+      <div class="container-fluid px-3">
+        <div class="row g-3 g-md-4 justify-content-center">
+          
+          <!-- Project 1: Intel Localization Project -->
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 project-card shadow-sm">
+              <img src="img/intel.png" alt="Intel Localization Project Screenshot" class="card-img-top project-image" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                  <span class="project-link" onclick="navigateToIntelProject()" style="color: #9d4edd; cursor: pointer; text-decoration: underline;">
+                    <i class="bi bi-laptop"></i> Intel Localization & Accessibility Project
+                  </span>
+                </h5>
+                <p class="card-text flex-grow-1">A comprehensive web development project focusing on Bootstrap implementation, multilingual localization, and accessibility compliance. This project demonstrates modern responsive design principles while ensuring inclusive user experiences across diverse languages and regions.</p>
+                <div class="project-actions mb-3">
+                  <button class="btn btn-sm project-btn" onclick="navigateToIntelProject()">
+                    <i class="bi bi-eye"></i> Live Demo
+                  </button>
+                  <a href="https://github.com/Murrayec1/Project-3-Intel-Localization" target="_blank" rel="noopener" class="btn btn-sm project-btn-secondary">
+                    <i class="bi bi-github"></i> Source Code
+                  </a>
+                </div>
+                <div class="project-tech mt-auto">
+                  <span class="badge bg-primary me-1 mb-1">Bootstrap</span>
+                  <span class="badge bg-success me-1 mb-1">Localization</span>
+                  <span class="badge bg-info me-1 mb-1">Accessibility</span>
+                  <span class="badge bg-warning text-dark me-1 mb-1">Responsive</span>
+                  <span class="badge bg-secondary me-1 mb-1">Semantic HTML</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Charity Water Game Prototype -->
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 project-card shadow-sm">
+              <img src="img/charity water.png" alt="Charity Water Game Prototype Screenshot" class="card-img-top project-image" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                  <span class="project-link" onclick="navigateToCharityWaterProject()" style="color: #9d4edd; cursor: pointer; text-decoration: underline;">
+                    <i class="bi bi-droplet"></i> Charity: Water Choice-Based Game
+                  </span>
+                </h5>
+                <p class="card-text flex-grow-1">A meaningful interactive storytelling experience that showcases iterative development. Through user feedback, this project evolved from a simple prototype into a bold, engaging narrative about water accessibility with refined JavaScript logic and optimized game flow.</p>
+                <div class="project-actions mb-3">
+                  <button class="btn btn-sm project-btn" onclick="navigateToCharityWaterProject()">
+                    <i class="bi bi-eye"></i> Live Demo
+                  </button>
+                  <a href="https://github.com/Murrayec1/05-charity-water-game-prototype" target="_blank" rel="noopener" class="btn btn-sm project-btn-secondary">
+                    <i class="bi bi-github"></i> Source Code
+                  </a>
+                </div>
+                <div class="project-tech mt-auto">
+                  <span class="badge bg-primary me-1 mb-1">Interactive Story</span>
+                  <span class="badge bg-success me-1 mb-1">JavaScript</span>
+                  <span class="badge bg-info me-1 mb-1">UX Design</span>
+                  <span class="badge bg-warning text-dark me-1 mb-1">Iterative Dev</span>
+                  <span class="badge bg-secondary me-1 mb-1">Social Impact</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: NASA Space Explorer -->
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 project-card shadow-sm">
+              <img src="img/nasa.jpg" alt="NASA Space Explorer Screenshot" class="card-img-top project-image" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                  <span class="project-link" onclick="navigateToNASAProject()" style="color: #9d4edd; cursor: pointer; text-decoration: underline;">
+                    <i class="bi bi-rocket"></i> NASA Space Explorer
+                  </span>
+                </h5>
+                <p class="card-text flex-grow-1">A dynamic web application connecting users with NASA's APOD API for custom date range exploration of space imagery. Features real-world API integration, data filtering, robust error handling, and thoughtful UX design reflecting NASA's branding.</p>
+                <div class="project-actions mb-3">
+                  <button class="btn btn-sm project-btn" onclick="navigateToNASAProject()">
+                    <i class="bi bi-eye"></i> Live Demo
+                  </button>
+                  <a href="https://github.com/Murrayec1/07-nasa-space-explorer" target="_blank" rel="noopener" class="btn btn-sm project-btn-secondary">
+                    <i class="bi bi-github"></i> Source Code
+                  </a>
+                </div>
+                <div class="project-tech mt-auto">
+                  <span class="badge bg-primary me-1 mb-1">NASA API</span>
+                  <span class="badge bg-success me-1 mb-1">Data Filtering</span>
+                  <span class="badge bg-info me-1 mb-1">Error Handling</span>
+                  <span class="badge bg-warning text-dark me-1 mb-1">UI/UX</span>
+                  <span class="badge bg-secondary me-1 mb-1">Real-time Data</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: L'Oréal Brand Chatbot -->
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 project-card shadow-sm">
+              <img src="img/loreal.png" alt="L'Oréal Chatbot Screenshot" class="card-img-top project-image" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                  <span class="project-link" onclick="navigateToLorealProject()" style="color: #9d4edd; cursor: pointer; text-decoration: underline;">
+                    <i class="bi bi-chat-dots"></i> L'Oréal AI Beauty Consultant
+                  </span>
+                </h5>
+                <p class="card-text flex-grow-1">A sophisticated AI-powered chatbot with 90s grunge aesthetic and OpenAI integration. Features personalized beauty recommendations, secure API management through Cloudflare, and authentic L'Oréal brand voice development.</p>
+                <div class="project-actions mb-3">
+                  <button class="btn btn-sm project-btn" onclick="navigateToLorealProject()">
+                    <i class="bi bi-eye"></i> Live Demo
+                  </button>
+                  <a href="https://github.com/Murrayec1/08-prj-loreal-chatbot" target="_blank" rel="noopener" class="btn btn-sm project-btn-secondary">
+                    <i class="bi bi-github"></i> Source Code
+                  </a>
+                </div>
+                <div class="project-tech mt-auto">
+                  <span class="badge bg-primary me-1 mb-1">OpenAI API</span>
+                  <span class="badge bg-success me-1 mb-1">Brand Voice</span>
+                  <span class="badge bg-info me-1 mb-1">Secure API</span>
+                  <span class="badge bg-warning text-dark me-1 mb-1">UI/UX</span>
+                  <span class="badge bg-secondary me-1 mb-1">Conversational AI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favorites">
+      <h2>My Favorite Digital Spells</h2>
+      <!-- Simple list of favorite links for beginners -->
+      <div class="favorites-container">
+        <div class="favorite-item">
+          <h3>💼 Professional Network</h3>
+          <a href="https://linkedin.com/in/emerald-carolynn" target="_blank" rel="noopener" aria-label="Visit Emerald's LinkedIn profile">LinkedIn Profile</a>
+          <p>Connect with me professionally and see my career journey</p>
+        </div>
+        <div class="favorite-item">
+          <h3>💻 Code Repository</h3>
+          <a href="https://github.com/Murrayec1" target="_blank" rel="noopener" aria-label="Visit Emerald's GitHub profile">GitHub Profile</a>
+          <p>Explore my coding projects and development journey</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Summon Me (Contact)</h2>
+      <!-- Simple contact information for beginners -->
+      <div class="contact-container">
+        <p>Ready to collaborate on some magical web projects? Let's connect!</p>
+        
+        <!-- Contact form for beginners -->
+        <form class="contact-form" action="#" method="post" aria-label="Contact form">
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required aria-required="true">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required aria-required="true">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Cast Message Spell ✨</button>
+        </form>
+        
+        <!-- Alternative contact methods -->
+        <div class="contact-info">
+          <p>Or find me in the digital realm:</p>
+          <p>📧 Email: murrayec1@appstate.edu</p>
+          <p>🌙 Always brewing up new code potions!</p>
+        </div>
+      </div>
+    </section>
+
+  </div> <!-- End of main container -->
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2024 Emerald Carolynn - Web Alchemist | Crafted with HTML, CSS, and a touch of magic ✨</p>
+  </footer>
+
+  <!-- JavaScript for Resume Toggle -->
+  <script>
+    // Smooth scrolling for navigation links
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add smooth scrolling to all navigation links
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Back to top button functionality
+      const backToTopBtn = document.getElementById('backToTop');
+      
+      // Show/hide back to top button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      });
+
+      // Smooth scroll to top when button is clicked
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Enhanced form validation and success message
+      const contactForm = document.querySelector('.contact-form');
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+        
+        // Basic validation
+        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+          showMessage('Please fill in all fields! ⚠️', 'error');
+          return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showMessage('Please enter a valid email address! 📧', 'error');
+          return;
+        }
+        
+        // Show success message (in a real app, you'd send this to a server)
+        showMessage('✨ Your magical message has been sent! I\'ll get back to you soon! 🪄', 'success');
+        
+        // Reset form
+        this.reset();
+      });
+    });
+
+    // Function to show messages
+    function showMessage(text, type) {
+      // Remove any existing message
+      const existingMessage = document.querySelector('.form-message');
+      if (existingMessage) {
+        existingMessage.remove();
+      }
+      
+      // Create new message element
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `form-message ${type}`;
+      messageDiv.textContent = text;
+      
+      // Insert message after the form
+      const form = document.querySelector('.contact-form');
+      form.insertAdjacentElement('afterend', messageDiv);
+      
+      // Remove message after 5 seconds
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 5000);
+    }
+
+    function toggleResume() {
+      const resume = document.getElementById('masterResume');
+      const button = document.getElementById('resumeToggle');
+      
+      if (resume.classList.contains('hidden')) {
+        resume.classList.remove('hidden');
+        resume.classList.add('visible');
+        button.innerHTML = '📋 Hide Master Resume ✨';
+        button.classList.add('active');
+      } else {
+        resume.classList.remove('visible');
+        resume.classList.add('hidden');
+        button.innerHTML = '📋 View Master Resume ✨';
+        button.classList.remove('active');
+      }
+    }
+
+    // Force navigation to Intel project
+    function navigateToIntelProject() {
+      // Use location.href to force direct navigation
+      window.location.href = 'https://murrayec1.github.io/Project-3-Intel-Localization/';
+    }
+
+    // Force navigation to Charity Water project
+    function navigateToCharityWaterProject() {
+      // Use location.href to force direct navigation
+      window.location.href = 'https://murrayec1.github.io/05-charity-water-game-prototype/';
+    }
+
+    // Force navigation to NASA Space Explorer project
+    function navigateToNASAProject() {
+      // Use location.href to force direct navigation
+      window.location.href = 'https://murrayec1.github.io/07-nasa-space-explorer/';
+    }
+
+    // Force navigation to L'Oréal Chatbot project
+    function navigateToLorealProject() {
+      // Use location.href to force direct navigation
+      window.location.href = 'https://murrayec1.github.io/08-prj-loreal-chatbot/';
+    }
+
+    // Download resume function
+    function downloadResume() {
+      // In a real implementation, you'd have a PDF file to download
+      // For now, we'll show a message about creating a PDF
+      showMessage('📄 PDF Resume feature coming soon! For now, you can print this page or contact me for a PDF copy. 🪄', 'success');
+    }
+  </script>
+
+  <!-- Bootstrap JavaScript for interactive components -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
