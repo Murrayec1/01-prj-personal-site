@@ -4,6 +4,52 @@
 /* Import a more professional gothic font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital,wght@0,400;1,400&display=swap');
 
+/* RTL Language Toggle Button */
+.rtl-toggle-container {
+  position: fixed;
+  top: 20px;
+  inset-inline-end: 20px; /* Uses logical property for RTL support */
+  z-index: 1000;
+}
+
+.rtl-toggle-btn {
+  background: rgba(157, 78, 221, 0.9);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(157, 78, 221, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rtl-toggle-btn:hover {
+  background: rgba(157, 78, 221, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(157, 78, 221, 0.4);
+}
+
+.rtl-toggle-btn i {
+  font-size: 16px;
+}
+
+/* RTL Support - Root HTML Element */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
 /* Set a modern gradient background with gothic colors */
 body {
   background: linear-gradient(135deg, #1a0d25 0%, #2b1837 25%, #3d2247 50%, #2b1837 75%, #1a0d25 100%);
@@ -24,7 +70,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Modern container wrapper for sleek layout */
+/* Modern container wrapper for sleek layout with RTL support */
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -35,9 +81,8 @@ body {
   box-shadow: 
     0 0 50px rgba(124, 58, 126, 0.2),
     inset 0 1px 0 rgba(255, 182, 193, 0.1); /* Inner highlight for modern look */
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 0 15px; /* Add horizontal padding for breathing room */
+  margin-block: 20px; /* Logical property for top/bottom margins */
+  padding-inline: 15px; /* Logical property for horizontal padding */
   overflow: hidden; /* Keeps content within rounded borders */
 }
 
@@ -57,7 +102,7 @@ body {
   }
 }
 
-/* Modern navigation bar styles - more modern and sleek */
+/* Modern navigation bar styles - more modern and sleek with RTL support */
 nav {
   background: linear-gradient(90deg, rgba(61, 34, 71, 0.9), rgba(124, 58, 126, 0.7));
   backdrop-filter: blur(15px);
@@ -68,14 +113,16 @@ nav {
   position: relative;
 }
 
+/* RTL Navigation Direction */
+html[dir="rtl"] nav {
+  background: linear-gradient(-90deg, rgba(61, 34, 71, 0.9), rgba(124, 58, 126, 0.7));
+}
+
 /* Add subtle pattern overlay for modern texture */
 nav::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0; /* Logical property for top/right/bottom/left */
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
   opacity: 0.3;
   pointer-events: none;
@@ -94,20 +141,22 @@ nav a {
   z-index: 1;
 }
 
-/* Modern hover effect with sliding background */
+/* Modern hover effect with sliding background - RTL compatible */
 nav a::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0; /* Logical property for all sides */
   background: linear-gradient(45deg, rgba(255, 182, 193, 0.2), rgba(124, 58, 126, 0.3));
   border-radius: 8px;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
   z-index: -1;
+}
+
+/* RTL hover effect origin */
+html[dir="rtl"] nav a::before {
+  transform-origin: right;
 }
 
 nav a:hover::before {
@@ -958,11 +1007,11 @@ footer {
   margin-bottom: 25px;
 }
 
-/* Back to Top Button */
+/* Back to Top Button with RTL support */
 .back-to-top {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  inset-inline-end: 30px; /* Logical property for right/left positioning */
   width: 50px;
   height: 50px;
   background: linear-gradient(45deg, rgba(124, 58, 126, 0.9), rgba(61, 34, 71, 0.9));
@@ -1449,4 +1498,87 @@ nav a:active {
   .resume-section h3 {
     font-size: 1.3em;
   }
+}
+
+/* ========================================= */
+/* RTL (Right-to-Left) Support Styles */
+/* ========================================= */
+
+/* Global RTL Adjustments */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: start; /* Uses logical property */
+}
+
+html[dir="rtl"] body {
+  text-align: start;
+}
+
+/* RTL Form Adjustments */
+html[dir="rtl"] .form-group label {
+  text-align: start;
+}
+
+html[dir="rtl"] .form-group input,
+html[dir="rtl"] .form-group textarea {
+  text-align: start;
+}
+
+/* RTL Project Cards */
+html[dir="rtl"] .project-tech {
+  text-align: start;
+}
+
+html[dir="rtl"] .project-actions {
+  direction: rtl;
+}
+
+/* RTL Resume Sections */
+html[dir="rtl"] .resume-section {
+  text-align: start;
+}
+
+html[dir="rtl"] .job-details,
+html[dir="rtl"] .education-details {
+  text-align: start;
+}
+
+/* RTL Navigation adjustments */
+html[dir="rtl"] nav a {
+  margin: 0 20px; /* Keep centered spacing */
+}
+
+/* RTL Bootstrap badge alignment */
+html[dir="rtl"] .badge {
+  margin-inline-start: 0.1rem;
+  margin-inline-end: 0.1rem;
+}
+
+/* RTL Icons - flip certain directional icons */
+html[dir="rtl"] .bi-arrow-right::before {
+  content: "\f12a"; /* arrow-left */
+}
+
+html[dir="rtl"] .bi-arrow-left::before {
+  content: "\f124"; /* arrow-right */
+}
+
+/* RTL Contact info alignment */
+html[dir="rtl"] .contact-info {
+  text-align: start;
+}
+
+/* RTL Footer */
+html[dir="rtl"] footer {
+  text-align: center; /* Keep footer centered */
+}
+
+/* Accessibility: Ensure focus indicators work in RTL */
+html[dir="rtl"] *:focus {
+  outline-offset: 2px;
+}
+
+/* RTL-specific smooth scrolling adjustments */
+html[dir="rtl"] html {
+  scroll-behavior: smooth;
 }

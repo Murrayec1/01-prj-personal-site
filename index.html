@@ -21,6 +21,12 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪄</text></svg>">
 </head>
 <body>
+  <!-- RTL Language Toggle -->
+  <div class="rtl-toggle-container">
+    <button id="rtlToggle" class="rtl-toggle-btn" onclick="toggleRTL()" aria-label="Toggle Right-to-Left Language Support">
+      <i class="bi bi-translate"></i> RTL
+    </button>
+  </div>
   <!-- Back to Top Button -->
   <button id="backToTop" class="back-to-top" aria-label="Back to top">
     <i class="bi bi-arrow-up"></i>
@@ -352,7 +358,7 @@
           <!-- Project 2: Charity Water Game Prototype -->
           <div class="col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="card h-100 project-card shadow-sm">
-              <img src="img/charity water.png" alt="Charity Water Game Prototype Screenshot" class="card-img-top project-image" loading="lazy">
+              <img src="img/charity-water.png" alt="Charity Water Game Prototype Screenshot" class="card-img-top project-image" loading="lazy">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">
                   <span class="project-link" onclick="navigateToCharityWaterProject()" style="color: #9d4edd; cursor: pointer; text-decoration: underline;">
@@ -508,6 +514,12 @@
   <script>
     // Smooth scrolling for navigation links
     document.addEventListener('DOMContentLoaded', function() {
+      // Load saved RTL preference first
+      const savedDirection = localStorage.getItem('textDirection');
+      if (savedDirection === 'rtl') {
+        toggleRTL();
+      }
+      
       // Add smooth scrolling to all navigation links
       const navLinks = document.querySelectorAll('nav a[href^="#"]');
       navLinks.forEach(link => {
@@ -645,6 +657,28 @@
       // In a real implementation, you'd have a PDF file to download
       // For now, we'll show a message about creating a PDF
       showMessage('📄 PDF Resume feature coming soon! For now, you can print this page or contact me for a PDF copy. 🪄', 'success');
+    }
+
+    // RTL Toggle functionality
+    function toggleRTL() {
+      const html = document.documentElement;
+      const button = document.getElementById('rtlToggle');
+      
+      if (html.getAttribute('dir') === 'rtl') {
+        // Switch to LTR
+        html.setAttribute('dir', 'ltr');
+        html.setAttribute('lang', 'en');
+        button.innerHTML = '<i class="bi bi-translate"></i> RTL';
+        button.setAttribute('aria-label', 'Switch to Right-to-Left Language Support');
+        localStorage.setItem('textDirection', 'ltr');
+      } else {
+        // Switch to RTL
+        html.setAttribute('dir', 'rtl');
+        html.setAttribute('lang', 'ar'); // Arabic as example RTL language
+        button.innerHTML = '<i class="bi bi-translate"></i> LTR';
+        button.setAttribute('aria-label', 'Switch to Left-to-Right Language Support');
+        localStorage.setItem('textDirection', 'rtl');
+      }
     }
   </script>
 
