@@ -814,6 +814,73 @@ footer {
   }
 }
 
+/* Project Action Buttons */
+.project-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.project-btn {
+  background: linear-gradient(45deg, rgba(124, 58, 126, 0.8), rgba(61, 34, 71, 0.8)) !important;
+  color: #ffb6c1 !important;
+  border: 1px solid rgba(124, 58, 126, 0.6) !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  font-family: 'IM Fell English', serif !important;
+  font-size: 0.9em !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.project-btn:hover {
+  background: linear-gradient(45deg, rgba(124, 58, 126, 1), rgba(61, 34, 71, 1)) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(124, 58, 126, 0.4);
+}
+
+.project-btn-secondary {
+  background: rgba(61, 34, 71, 0.6) !important;
+  color: #e6e6fa !important;
+  border: 1px solid rgba(124, 58, 126, 0.4) !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  font-family: 'IM Fell English', serif !important;
+  font-size: 0.9em !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.project-btn-secondary:hover {
+  background: rgba(61, 34, 71, 0.8) !important;
+  color: #ffb6c1 !important;
+  border-color: rgba(124, 58, 126, 0.6) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(61, 34, 71, 0.4);
+}
+
+/* Responsive project actions */
+@media (max-width: 576px) {
+  .project-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .project-btn,
+  .project-btn-secondary {
+    font-size: 0.85em !important;
+    padding: 6px 12px !important;
+  }
+}
+
 .project-card h3 {
   color: #ffb6c1;
   margin-top: 0;
@@ -891,6 +958,113 @@ footer {
   margin-bottom: 25px;
 }
 
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, rgba(124, 58, 126, 0.9), rgba(61, 34, 71, 0.9));
+  color: #ffb6c1;
+  border: 2px solid rgba(124, 58, 126, 0.6);
+  border-radius: 50%;
+  font-size: 1.2em;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(124, 58, 126, 0.3);
+}
+
+.back-to-top:hover {
+  background: linear-gradient(45deg, rgba(124, 58, 126, 1), rgba(61, 34, 71, 1));
+  color: #ffffff;
+  transform: translateY(0) scale(1.1);
+  box-shadow: 0 6px 20px rgba(124, 58, 126, 0.5);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Form Message Styling */
+.form-message {
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-size: 1.1em;
+  animation: slideInMessage 0.5s ease-out;
+  max-width: 500px;
+}
+
+.form-message.success {
+  background: linear-gradient(45deg, rgba(46, 125, 50, 0.8), rgba(76, 175, 80, 0.6));
+  border: 2px solid rgba(76, 175, 80, 0.7);
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.form-message.error {
+  background: linear-gradient(45deg, rgba(183, 28, 28, 0.8), rgba(211, 47, 47, 0.6));
+  border: 2px solid rgba(211, 47, 47, 0.7);
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced navigation with active states */
+nav a {
+  color: #ffb6c1;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 1.1em;
+  font-family: 'IM Fell English', serif;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* Active navigation indicator */
+nav a:focus,
+nav a:active {
+  outline: 2px solid #ffb6c1;
+  outline-offset: 2px;
+}
+
+/* Form field focus improvements */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ffb6c1;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.3);
+  transform: scale(1.02);
+}
+
 .form-group {
   margin-bottom: 20px;
 }
@@ -955,6 +1129,10 @@ footer {
 .resume-toggle-container {
   text-align: center;
   margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .resume-toggle-btn {
@@ -969,6 +1147,39 @@ footer {
   transition: all 0.4s ease;
   box-shadow: 0 5px 15px rgba(124, 58, 126, 0.3);
   font-weight: bold;
+}
+
+.resume-download-btn {
+  background: linear-gradient(45deg, rgba(61, 34, 71, 0.8), rgba(44, 19, 56, 0.8));
+  color: #e6e6fa;
+  border: 2px solid rgba(124, 58, 126, 0.4);
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-family: 'IM Fell English', serif;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(61, 34, 71, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resume-download-btn:hover {
+  background: linear-gradient(45deg, rgba(61, 34, 71, 1), rgba(44, 19, 56, 1));
+  color: #ffb6c1;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(61, 34, 71, 0.4);
+  border-color: rgba(124, 58, 126, 0.6);
+}
+
+/* Responsive button layout */
+@media (min-width: 768px) {
+  .resume-toggle-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
 }
 
 .resume-toggle-btn:hover {
