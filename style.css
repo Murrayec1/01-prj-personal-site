@@ -39,6 +39,41 @@
   font-size: 16px;
 }
 
+/* Professional Theme Toggle Button */
+.theme-toggle-container {
+  position: fixed;
+  top: 70px; /* Below RTL toggle */
+  inset-inline-end: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle-btn {
+  background: rgba(40, 116, 166, 0.9);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(40, 116, 166, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(40, 116, 166, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 116, 166, 0.4);
+}
+
+.theme-toggle-btn i {
+  font-size: 16px;
+}
+
 /* RTL Support - Root HTML Element */
 html[dir="rtl"] {
   direction: rtl;
@@ -1581,4 +1616,181 @@ html[dir="rtl"] *:focus {
 /* RTL-specific smooth scrolling adjustments */
 html[dir="rtl"] html {
   scroll-behavior: smooth;
+}
+
+/* ========================================= */
+/* Professional Theme Styles */
+/* ========================================= */
+
+/* Professional Theme Body */
+body.professional-theme {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 25%, #dee2e6 50%, #e9ecef 75%, #f8f9fa 100%);
+  color: #212529;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Professional Theme Container */
+body.professional-theme .main-container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Professional Theme Navigation */
+body.professional-theme nav {
+  background: linear-gradient(90deg, rgba(52, 58, 64, 0.95), rgba(73, 80, 87, 0.9));
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.professional-theme nav a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+body.professional-theme nav a::before {
+  background: linear-gradient(45deg, rgba(0, 123, 255, 0.3), rgba(40, 167, 69, 0.3));
+}
+
+/* Professional Theme Header */
+body.professional-theme header h1 {
+  color: #2c3e50;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+body.professional-theme .professional-titles {
+  display: block !important;
+  color: #495057;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+body.professional-theme .professional-titles .subtitle {
+  font-size: 1.1em;
+  margin: 8px 0;
+  color: #6c757d;
+}
+
+body.professional-theme .professional-intro {
+  display: block !important;
+  font-size: 1.2em;
+  color: #495057;
+  font-style: normal;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+body.professional-theme .professional-motto {
+  display: block !important;
+  font-size: 1.3em;
+  color: #2874a6;
+  font-weight: 600;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Professional Theme Section Headers */
+body.professional-theme h2 {
+  color: #2c3e50;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+/* Professional Theme About Section */
+body.professional-theme #about p {
+  color: #495057;
+  line-height: 1.7;
+  font-size: 1.05em;
+}
+
+/* Professional Theme Resume Buttons */
+body.professional-theme .resume-toggle-btn,
+body.professional-theme .resume-download-btn {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  border: none;
+  font-weight: 500;
+}
+
+body.professional-theme .resume-toggle-btn:hover,
+body.professional-theme .resume-download-btn:hover {
+  background: linear-gradient(45deg, #2980b9, #1f5582);
+}
+
+/* Professional Theme Project Cards */
+body.professional-theme .project-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.professional-theme .project-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+body.professional-theme .project-btn {
+  background: linear-gradient(45deg, #28a745, #20c997);
+}
+
+body.professional-theme .project-btn:hover {
+  background: linear-gradient(45deg, #20c997, #17a2b8);
+}
+
+body.professional-theme .project-btn-secondary {
+  background: linear-gradient(45deg, #6c757d, #495057);
+  color: white;
+}
+
+/* Professional Theme Contact Section */
+body.professional-theme .contact-form input,
+body.professional-theme .contact-form textarea {
+  border: 2px solid #dee2e6;
+  background-color: #ffffff;
+  color: #495057;
+}
+
+body.professional-theme .contact-form input:focus,
+body.professional-theme .contact-form textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+}
+
+body.professional-theme .submit-btn {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  border: none;
+  font-weight: 500;
+}
+
+body.professional-theme .submit-btn:hover {
+  background: linear-gradient(45deg, #2980b9, #1f5582);
+}
+
+/* Professional Theme Footer */
+body.professional-theme footer {
+  background: rgba(52, 58, 64, 0.95);
+  color: #ffffff;
+}
+
+/* Professional Theme Back to Top Button */
+body.professional-theme .back-to-top {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  border: 2px solid rgba(52, 152, 219, 0.6);
+}
+
+body.professional-theme .back-to-top:hover {
+  background: linear-gradient(45deg, #2980b9, #1f5582);
+}
+
+/* Hide magical elements in professional theme */
+body.professional-theme [data-magical-content="true"] {
+  display: none !important;
+}
+
+/* Ensure professional elements are visible */
+body.professional-theme [data-professional-content="true"] {
+  display: block !important;
 }

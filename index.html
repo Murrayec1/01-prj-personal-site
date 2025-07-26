@@ -27,6 +27,13 @@
       <i class="bi bi-translate"></i> RTL
     </button>
   </div>
+  
+  <!-- Professional Theme Toggle -->
+  <div class="theme-toggle-container">
+    <button id="themeToggle" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Professional Theme">
+      <i class="bi bi-briefcase"></i> Professional
+    </button>
+  </div>
   <!-- Back to Top Button -->
   <button id="backToTop" class="back-to-top" aria-label="Back to top">
     <i class="bi bi-arrow-up"></i>
@@ -47,10 +54,10 @@
     <!-- Website Header (Hero Section) -->
     <header id="home" role="banner">
       <!-- Epic Game of Thrones style title announcement -->
-      <h1>Emerald Carolynn</h1>
+      <h1 data-magical="Emerald Carolynn" data-professional="Emerald Murray">Emerald Carolynn</h1>
       
       <!-- Grand titles in GOT style -->
-      <div class="royal-titles">
+      <div class="royal-titles" data-magical-content="true">
         <p class="title-line">The First of Her Name</p>
         <p class="title-line">Weaver of Digital Realms</p>
         <p class="title-line">Maester of the Sacred Arts of HTML & CSS</p>
@@ -60,21 +67,39 @@
         <p class="title-line">Mother of Creative Content</p>
       </div>
       
+      <!-- Professional titles - hidden by default -->
+      <div class="professional-titles" data-professional-content="true" style="display: none;">
+        <p class="subtitle">Web Developer & Digital Solutions Specialist</p>
+        <p class="subtitle">Healthcare Professional Transitioning to Technology</p>
+        <p class="subtitle">Experienced in User-Centered Design & Accessibility</p>
+      </div>
+      
       <!-- Epic proclamation -->
-      <p class="royal-proclamation">
+      <p class="royal-proclamation" data-magical-content="true">
         "From the Northern Kingdoms of Code to the Southern Reaches of Design,<br>
         I forge digital experiences with fire and blood... and JavaScript!"
       </p>
       
+      <!-- Professional introduction - hidden by default -->
+      <p class="professional-intro" data-professional-content="true" style="display: none;">
+        Dedicated professional with extensive healthcare and customer service experience,<br>
+        now applying analytical skills and attention to detail to create effective web solutions.
+      </p>
+      
       <!-- House motto style tagline -->
-      <p class="house-motto">
+      <p class="house-motto" data-magical-content="true">
         ⚔️ Code is Coming ⚔️
+      </p>
+      
+      <!-- Professional tagline - hidden by default -->
+      <p class="professional-motto" data-professional-content="true" style="display: none;">
+        Building Better Digital Experiences Through Human-Centered Design
       </p>
     </header>
 
     <!-- About Me Section -->
     <section id="about" role="main">
-      <h2>About Me</h2>
+      <h2 data-magical="About Me" data-professional="Professional Summary">About Me</h2>
       <img src="profile.jpg" alt="Emerald Carolynn - Web Alchemist and Creative Coder profile photo" width="200" height="200" loading="lazy">
       <!-- Professional yet magical bio showcasing diverse experience -->
       <p>
@@ -320,7 +345,7 @@
 
     <!-- Featured Projects Section -->
     <section id="projects">
-      <h2>Featured Spells (Projects)</h2>
+      <h2 data-magical="Featured Spells (Projects)" data-professional="Featured Projects">Featured Spells (Projects)</h2>
       <!-- Bootstrap container for responsive grid layout with proper spacing -->
       <div class="container-fluid px-3">
         <div class="row g-3 g-md-4 justify-content-center">
@@ -451,7 +476,7 @@
 
     <!-- Favorites Section -->
     <section id="favorites">
-      <h2>My Favorite Digital Spells</h2>
+      <h2 data-magical="My Favorite Digital Spells" data-professional="Professional Links">My Favorite Digital Spells</h2>
       <!-- Simple list of favorite links for beginners -->
       <div class="favorites-container">
         <div class="favorite-item">
@@ -469,10 +494,10 @@
 
     <!-- Contact Section -->
     <section id="contact">
-      <h2>Summon Me (Contact)</h2>
+      <h2 data-magical="Summon Me (Contact)" data-professional="Contact Information">Summon Me (Contact)</h2>
       <!-- Simple contact information for beginners -->
       <div class="contact-container">
-        <p>Ready to collaborate on some magical web projects? Let's connect!</p>
+        <p data-magical="Ready to collaborate on some magical web projects? Let's connect!" data-professional="I'm interested in connecting with professionals and exploring new opportunities in web development.">Ready to collaborate on some magical web projects? Let's connect!</p>
         
         <!-- Contact form for beginners -->
         <form class="contact-form" action="#" method="post" aria-label="Contact form">
@@ -491,7 +516,7 @@
             <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
           </div>
           
-          <button type="submit" class="submit-btn">Cast Message Spell ✨</button>
+          <button type="submit" class="submit-btn" data-magical="Cast Message Spell ✨" data-professional="Send Message">Cast Message Spell ✨</button>
         </form>
         
         <!-- Alternative contact methods -->
@@ -679,6 +704,210 @@
         button.setAttribute('aria-label', 'Switch to Left-to-Right Language Support');
         localStorage.setItem('textDirection', 'rtl');
       }
+    }
+
+    // Professional Theme Toggle functionality
+    function toggleTheme() {
+      const body = document.body;
+      const button = document.getElementById('themeToggle');
+      const isProfessional = body.classList.contains('professional-theme');
+      
+      if (isProfessional) {
+        // Switch to Magical Theme
+        body.classList.remove('professional-theme');
+        button.innerHTML = '<i class="bi bi-briefcase"></i> Professional';
+        button.setAttribute('aria-label', 'Switch to Professional Theme');
+        localStorage.setItem('themeMode', 'magical');
+        updateContent('magical');
+      } else {
+        // Switch to Professional Theme
+        body.classList.add('professional-theme');
+        button.innerHTML = '<i class="bi bi-magic"></i> Creative';
+        button.setAttribute('aria-label', 'Switch to Creative Theme');
+        localStorage.setItem('themeMode', 'professional');
+        updateContent('professional');
+      }
+    }
+
+    // Update content based on theme
+    function updateContent(theme) {
+      // Update elements with data attributes
+      const elementsWithData = document.querySelectorAll('[data-magical], [data-professional]');
+      elementsWithData.forEach(element => {
+        const magicalText = element.getAttribute('data-magical');
+        const professionalText = element.getAttribute('data-professional');
+        
+        if (theme === 'professional' && professionalText) {
+          element.textContent = professionalText;
+        } else if (theme === 'magical' && magicalText) {
+          element.textContent = magicalText;
+        }
+      });
+
+      // Toggle content sections
+      const magicalContent = document.querySelectorAll('[data-magical-content]');
+      const professionalContent = document.querySelectorAll('[data-professional-content]');
+      
+      if (theme === 'professional') {
+        magicalContent.forEach(el => el.style.display = 'none');
+        professionalContent.forEach(el => el.style.display = 'block');
+      } else {
+        magicalContent.forEach(el => el.style.display = 'block');
+        professionalContent.forEach(el => el.style.display = 'none');
+      }
+    }
+
+    // Load saved theme preference on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load saved RTL preference first
+      const savedDirection = localStorage.getItem('textDirection');
+      if (savedDirection === 'rtl') {
+        toggleRTL();
+      }
+      
+      // Load saved theme preference
+      const savedTheme = localStorage.getItem('themeMode');
+      if (savedTheme === 'professional') {
+        toggleTheme();
+      }
+      
+      // Add smooth scrolling to all navigation links
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Back to top button functionality
+      const backToTopBtn = document.getElementById('backToTop');
+      
+      // Show/hide back to top button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      });
+
+      // Smooth scroll to top when button is clicked
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Enhanced form validation and success message
+      const contactForm = document.querySelector('.contact-form');
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+        
+        // Basic validation
+        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+          showMessage('Please fill in all fields! ⚠️', 'error');
+          return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showMessage('Please enter a valid email address! 📧', 'error');
+          return;
+        }
+        
+        // Show success message (in a real app, you'd send this to a server)
+        showMessage('✨ Your magical message has been sent! I\'ll get back to you soon! 🪄', 'success');
+        
+        // Reset form
+        this.reset();
+      });
+    });
+
+    // Function to show messages
+    function showMessage(text, type) {
+      // Remove any existing message
+      const existingMessage = document.querySelector('.form-message');
+      if (existingMessage) {
+        existingMessage.remove();
+      }
+      
+      // Create new message element
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `form-message ${type}`;
+      messageDiv.textContent = text;
+      
+      // Insert message after the form
+      const form = document.querySelector('.contact-form');
+      form.insertAdjacentElement('afterend', messageDiv);
+      
+      // Remove message after 5 seconds
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 5000);
+    }
+
+    function toggleResume() {
+      const resume = document.getElementById('masterResume');
+      const button = document.getElementById('resumeToggle');
+      
+      if (resume.classList.contains('hidden')) {
+        resume.classList.remove('hidden');
+        resume.classList.add('visible');
+        button.innerHTML = '📋 Hide Master Resume ✨';
+        button.classList.add('active');
+      } else {
+        resume.classList.remove('visible');
+        resume.classList.add('hidden');
+        button.innerHTML = '📋 View Master Resume ✨';
+        button.classList.remove('active');
+      }
+    }
+
+    // Force navigation to Intel project
+    function navigateToIntelProject() {
+      // Use location.href to force direct navigation
+      window.location.href = 'https://murrayec1.github.io/Project-3-Intel-Localization/';
+    }
+
+    // Force navigation to Charity Water project
+    function navigateToCharityWaterProject() {
+      // Use location.href to force direct navigation
+      window.location.href = 'https://murrayec1.github.io/05-charity-water-game-prototype/';
+    }
+
+    // Force navigation to NASA Space Explorer project
+    function navigateToNASAProject() {
+      // Use location.href to force direct navigation
+      window.location.href = 'https://murrayec1.github.io/07-nasa-space-explorer/';
+    }
+
+    // Force navigation to L'Oréal Chatbot project
+    function navigateToLorealProject() {
+      // Use location.href to force direct navigation
+      window.location.href = 'https://murrayec1.github.io/08-prj-loreal-chatbot/';
+    }
+
+    // Download resume function
+    function downloadResume() {
+      // In a real implementation, you'd have a PDF file to download
+      // For now, we'll show a message about creating a PDF
+      showMessage('📄 PDF Resume feature coming soon! For now, you can print this page or contact me for a PDF copy. 🪄', 'success');
     }
   </script>
 
