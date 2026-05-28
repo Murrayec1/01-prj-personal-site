@@ -127,7 +127,7 @@
   <!-- About Me Section -->
   <section id="about">
     <h2>About Me</h2>
-    <img src="profile.jpg" alt="Emerald Carolynn" width="200">
+    <img src="img/pro-photo.png" alt="Emerald Carolynn" width="200">
     <!-- Friendly, quirky, and spooky beginner bio -->
     <p>
       Hi there! I'm Emerald Carolynn, your friendly neighborhood Web Alchemist. I'm just starting my magical journey in web development, brewing up beginner projects with a dash of spooky style and a sprinkle of quirky code. If you like cauldrons full of creativity, glowing buttons, and a little bit of web wizardry, you’re in the right place. Let’s cast some code spells together!
